@@ -1,0 +1,25 @@
+name: Choix Alpha ou Beta
+
+on:
+  workflow_dispatch:
+    inputs:
+      choix:
+        description: "Choisir Alpha ou Beta"
+        type: choice
+        options:
+          - Alpha
+          - Beta
+        required: true
+        default: Alpha
+
+jobs:
+  afficher-choix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher le choix sélectionné
+        run: |
+          if [ "${{ github.event.inputs.choix }}" = "Alpha" ]; then
+            echo "Alpha"
+          else
+            echo "Beta"
+          fi
