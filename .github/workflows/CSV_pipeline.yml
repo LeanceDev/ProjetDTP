@@ -1,6 +1,6 @@
 name: CSV Pipeline
 
-
+on:
   workflow_dispatch:
     inputs:
       env:
